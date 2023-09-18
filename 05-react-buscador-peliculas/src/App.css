@@ -1,0 +1,80 @@
+.page {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  user-select: none;
+}
+
+form {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.movies {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 1.125rem 0 0;
+  width: 100%;
+}
+
+.movie {
+  text-align: center;
+}
+
+.movie img {
+  border-radius: 8px;
+  height: 357px;
+  transition: transform 0.2s;
+  aspect-ratio: 2/3;
+}
+
+.movies img:hover {
+  cursor: pointer;
+  transform: scale(1.025);
+  box-shadow: 0 0 13px 3px rgba(0, 0, 0, 0.25);
+}
+
+.movie h3 {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+.movie p {
+  color: rgba(211, 211, 211, 0.25);
+  font-weight: 600;
+  margin: 0 0 5px calc(10% - 13px);
+  text-align: start;
+  user-select: none;
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+}
+
+label:focus {
+  outline: none;
+}
+
+input[type="checkbox"]:focus-visible {
+  outline: 1px solid black;
+}

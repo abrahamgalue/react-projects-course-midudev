@@ -1,0 +1,40 @@
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 700;
+  user-select: none;
+}
+
+.filters>div {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.filters label {
+  margin-top: -4px
+}
+
+.filters span {
+  font-weight: 500;
+  font-size: 18px;
+  color: lch(35% 0 0)
+}
+
+select {
+  text-transform: capitalize;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+select option {
+  font-size: 16px;
+  font-weight: 500;
+  border: 0;
+}
