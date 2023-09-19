@@ -8,7 +8,7 @@
 
 Estos son proyectos que he desarrollado como parte de un curso de React. Esto forma parte mi aprendizaje con la librería React.
 
-**Seguiré agregando más proyectos, ya que aún continúo en aprendizaje.**
+**Seguiré agregando más proyectos, ya que me mantengo en continúo en aprendizaje.**
 
 <br>
 
