@@ -1459,3 +1459,16 @@ body>footer {
     text-decoration: underline;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .movie p {
+    color: rgb(217, 217, 217, 0.25);
+  }
+}
+
+
+@media (prefers-color-scheme: light) {
+  .movie p {
+    color: rgb(38, 38, 38, 0.75);
+  }
+}

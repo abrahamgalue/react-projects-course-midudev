@@ -60,7 +60,6 @@ main {
 }
 
 .movie p {
-  color: rgba(211, 211, 211, 0.25);
   font-weight: 600;
   margin: 0 0 5px calc(10% - 13px);
   text-align: start;
