@@ -29,19 +29,19 @@ body {
   box-sizing: border-box;
 }
 
-.board {
+/* .board {
   width: fit-content;
   margin: 40px auto;
   text-align: center;
-}
+} */
 
-.board h1 {
+/* .board h1 {
   color: #fff;
   margin-bottom: 60px;
   user-select: none;
-}
+} */
 
-.board button {
+/* .board button {
   padding: 8px 12px;
   margin: 25px;
   background: #202124;
@@ -53,12 +53,12 @@ body {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-}
+} */
 
-.board>button:hover {
+/* .board>button:hover {
   background: #eee;
   color: #222;
-}
+} */
 
 
 /* 
@@ -67,12 +67,12 @@ Game Section
 ------------
 */
 
-.board .game {
+/* .board .game {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-}
+} */
 
-.square {
+/* .square {
   width: 100px;
   height: 100px;
   border: 4px solid #0da192;
@@ -81,31 +81,31 @@ Game Section
   cursor: pointer;
   font-size: 48px;
   user-select: none;
-}
+} */
 
-.square:nth-child(1),
+/* .square:nth-child(1),
 .square:nth-child(2),
 .square:nth-child(3) {
   border-top: none;
-}
+} */
 
-.square:nth-child(1),
+/* .square:nth-child(1),
 .square:nth-child(4),
 .square:nth-child(7) {
   border-left: none;
-}
+} */
 
-.square:nth-child(3),
+/* .square:nth-child(3),
 .square:nth-child(6),
 .square:nth-child(9) {
   border-right: none;
-}
+} */
 
-.square:nth-child(7),
+/* .square:nth-child(7),
 .square:nth-child(8),
 .square:nth-child(9) {
   border-bottom: none;
-}
+} */
 
 /* 
 ------------
@@ -113,36 +113,36 @@ Turn Section
 ------------
 */
 
-.turn {
+/* .turn {
   display: flex;
   justify-content: center;
   margin: 15px auto;
   width: fit-content;
   position: relative;
   border-radius: 10px;
-}
+} */
 
-.turn .square,
+/* .turn .square,
 .winner .square {
   width: 70px;
   height: 70px;
   pointer-events: none;
   border-color: transparent;
-}
+} */
 
-.turn>.square {
+/* .turn>.square {
   width: 90px;
   height: 90px;
   border: none;
   opacity: 0.575;
-}
+} */
 
-.square.is-selected {
+/* .square.is-selected {
   color: #fff;
   border-radius: 12px;
   border-bottom: 3px solid #f2ebd3;
   opacity: 1;
-}
+} */
 
 /* 
 ------------
@@ -150,7 +150,7 @@ Winner Section
 ------------
 */
 
-.winner {
+/* .winner {
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -159,9 +159,9 @@ Winner Section
   display: grid;
   place-items: center;
   background-color: rgba(0, 0, 0, 0.7);
-}
+} */
 
-.winner .text {
+/* .winner .text {
   background: #202124;
   height: 300px;
   width: 320px;
@@ -171,11 +171,11 @@ Winner Section
   justify-content: center;
   align-items: center;
   gap: 20px;
-}
+} */
 
-.winner .win {
+/* .winner .win {
   margin: 0 auto;
   width: fit-content;
   display: flex;
   gap: 15px;
-}
+} */

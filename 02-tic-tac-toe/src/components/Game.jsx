@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { useState } from 'react'
 import confetti from 'canvas-confetti'
 import { Square } from './Square'
@@ -6,6 +7,60 @@ import { checkWinnerFrom, checkEndGame } from '../logic/board'
 import { WinnerModal } from './WinnerModal'
 import { saveGameToStorage, resetGameStorage } from '../logic/storage'
 import { Board } from './Board'
+
+const BoardContainer = styled.main`
+  width: fit-content;
+  margin: 40px auto;
+  text-align: center;
+
+  & > h1 {
+    color: #fff;
+    margin-bottom: 60px;
+    user-select: none;
+  }
+
+  & button {
+    padding: 8px 12px;
+    margin: 25px;
+    background: #202124;
+    border: 2px transparent;
+    color: #14bdac;
+    width: 120px;
+    border-radius: 25px;
+    transition: 0.2s;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  & button:hover {
+    background: #eee;
+    color: #222;
+  }
+`
+
+const Turn = styled.section`
+  display: flex;
+  justify-content: center;
+  margin: 15px auto;
+  width: fit-content;
+  position: relative;
+  border-radius: 10px;
+
+  & div {
+    width: 70px;
+    height: 70px;
+    pointer-events: none;
+    border-color: transparent;
+  }
+
+  & > div {
+    width: 90px;
+    height: 90px;
+    border: none;
+    opacity: 0.575;
+  }
+`
 
 export function Game() {
   const [board, setBoard] = useState(() => {
@@ -69,18 +124,18 @@ export function Game() {
   }
 
   return (
-    <main className='board'>
+    <BoardContainer>
       <h1>Tic tac toe</h1>
       <Board board={board} updateBoard={updateBoard} />
 
-      <section className='turn'>
+      <Turn>
         <Square isSelected={turn === TURNS.X}>{TURNS.X}</Square>
         <Square isSelected={turn === TURNS.O}>{TURNS.O}</Square>
-      </section>
+      </Turn>
 
       <button onClick={resetGame}>Game reset</button>
 
       <WinnerModal winner={winner} resetGame={resetGame} />
-    </main>
+    </BoardContainer>
   )
 }
