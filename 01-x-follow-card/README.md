@@ -17,3 +17,4 @@ Este proyecto utiliza:
 - El hook useState de React.
 - Renderizado condicional.
 - Template strings.
+- styled components para aplicar los estilos.
