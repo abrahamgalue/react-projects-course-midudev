@@ -1,72 +1,72 @@
-.x-followCard {
+/* .x-followCard {
   display: flex;
   align-items: center;
   color: #fff;
   font-size: .8rem;
   justify-content: space-between;
   width: 300px;
-}
+} */
 
-.x-followCard-header {
+/* .x-followCard-header {
   display: flex;
   align-items: center;
   gap: 4px;
-}
+} */
 
-.x-followCard-info {
+/* .x-followCard-info {
   display: flex;
   flex-direction: column;
-}
+} */
 
-.x-followCard-infoUserName {
+/* .x-followCard-infoUserName {
   opacity: .6;
-}
+} */
 
-.x-followCard-avatar {
+/* .x-followCard-avatar {
   width: 48px;
   height: 48px;
   border-radius: 100px;
-}
+} */
 
-.x-followCard-button {
+/* .x-followCard-button {
   cursor: pointer;
   border: 0;
   border-radius: 1000px;
   padding: 8.5px 16px;
   font-weight: bold;
   background-color: rgb(239, 243, 244);
-}
+} */
 
-.x-followCard-button:hover {
+/* .x-followCard-button:hover {
   background-color: rgb(215, 219, 220);
-}
+} */
 
-.x-followCard-text {
+/* .x-followCard-text {
   display: block;
-}
+} */
 
-.x-followCard-button.is-following {
+/* .x-followCard-button.is-following {
   border: 1px solid rgb(83, 100, 113);
   background: transparent;
   color: rgb(239, 243, 244);
   width: 95px;
-}
+} */
 
-.x-followCard-button.is-following:hover {
+/* .x-followCard-button.is-following:hover {
   background-color: rgba(244, 33, 46, 0.1);
   color: rgb(244, 33, 46);
   border: 1px solid rgb(103, 7, 15);
   opacity: 1;
-}
+} */
 
-.x-followCard-button.is-following:hover .x-followCard-text {
+/* .x-followCard-button.is-following:hover .x-followCard-text {
   display: none;
-}
+} */
 
-.x-followCard-button.is-following:hover .x-followCard-stopFollow {
+/* .x-followCard-button.is-following:hover .x-followCard-stopFollow {
   display: block;
-}
+} */
 
-.x-followCard-stopFollow {
+/* .x-followCard-stopFollow {
   display: none;
-}
+} */

@@ -1,32 +1,17 @@
-import "./App.css";
-import { XFollowCard } from "./XFollowCard.jsx";
+import './App.css'
+import styled from 'styled-components'
+import { XFollowCard } from './XFollowCard.jsx'
+import { users } from './mocks/users'
 
-const users = [
-  {
-    userName: "elmundodezowl",
-    name: "Zowl",
-    isFollowing: false,
-  },
-  {
-    userName: "HolaMundoDev",
-    name: "HolaMundo",
-    isFollowing: true,
-  },
-  {
-    userName: "vegetta777",
-    name: "Vegetta777",
-    isFollowing: false,
-  },
-  {
-    userName: "LosVlogsdeDross1",
-    name: "Los Vlogs de Dross",
-    isFollowing: true,
-  },
-];
+const Users = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`
 
 export function App() {
   return (
-    <section className="App">
+    <Users className='App'>
       {users.map(({ userName, name, isFollowing }) => (
         <XFollowCard
           key={userName}
@@ -36,6 +21,6 @@ export function App() {
           {name}
         </XFollowCard>
       ))}
-    </section>
-  );
+    </Users>
+  )
 }
