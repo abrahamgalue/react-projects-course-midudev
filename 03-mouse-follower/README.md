@@ -12,3 +12,4 @@ Este proyecto incluye:
 
 - Los hooks de React, **useState** y **useEffect.**
 - Estilos en línea.
+- [**styled-components**](https://styled-components.com/) para aplicar los estilos.

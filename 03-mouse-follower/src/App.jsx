@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
+import FollowMouseCursor from './Pointer.styled'
 
 const FollowMouse = () => {
   const [enabled, setEnabled] = useState(false)
@@ -6,8 +7,7 @@ const FollowMouse = () => {
 
   // pointer move
   useEffect(() => {
-
-    const handleMove = (event) => {
+    const handleMove = event => {
       const { clientX, clientY } = event
       setPosition({ x: clientX, y: clientY })
     }
@@ -15,7 +15,6 @@ const FollowMouse = () => {
     if (enabled) {
       window.addEventListener('pointermove', handleMove)
     }
-
 
     // getEventListeners(window) ← para saber cuantos eventos se han susbcrito
     // cleanup
@@ -35,27 +34,15 @@ const FollowMouse = () => {
   useEffect(() => {
     document.body.classList.toggle('no-cursor', enabled)
 
-    return () => { // cleanup method
+    return () => {
+      // cleanup method
       document.body.classList.remove('no-cursor')
     }
   }, [enabled])
 
   return (
     <>
-      <div style={{
-        position: 'absolute',
-        backgroundColor: 'rgba(48, 39, 178, 0.6)',
-        border: '1px solid #fff',
-        filter: 'blur(8px)',
-        borderRadius: '50%',
-        opacity: 0.8,
-        pointerEvents: 'none',
-        left: -25,
-        top: -25,
-        width: 50,
-        height: 50,
-        transform: `translate(${position.x}px, ${position.y}px)`
-      }} />
+      <FollowMouseCursor position={position} />
       <button onClick={() => setEnabled(!enabled)}>
         {enabled ? 'Disable' : 'Enable'} follow pointer
       </button>
