@@ -13,4 +13,4 @@ Este proyecto utiliza:
 - Manejo de estado en React con el hook useState.
 - Persistencia de datos con localStorage.
 - Lógica reutilizable en JavaScript, para ser utilizada en otros frameworks.
-- <a href="https://styled-components.com/" target="_blank" rel="noopener noreferrer">**styled-components**</a> para aplicar los estilos.
+- [**styled-components**](https://styled-components.com/) para aplicar los estilos.
