@@ -13,25 +13,25 @@ Alinearlo en columna
 ----------
 */
 
-main {
+/* main {
   display: flex;
   flex-direction: column;
   font-family: system-ui, sans-serif;
   margin: 0 auto;
   max-width: 800px;
   place-items: center;
-}
+} */
 
-main h1 {
+/* main h1 {
   user-select: none;
-}
+} */
 
-main img {
+/* main img {
   border-radius: 25px;
   max-width: 100%;
-}
+} */
 
-button {
+/* button {
   background-color: #1f1f1f;
   border: 1px solid #1f1f1f;
   border-radius: 10px;
@@ -41,12 +41,12 @@ button {
   font-weight: 700;
   padding: 0.5rem 1rem;
   user-select: none;
-}
+} */
 
-button:hover {
+/* button:hover {
   color: #1f1f1f;
   background-color: #fff;
-}
+} */
 
 /* 
 ----------

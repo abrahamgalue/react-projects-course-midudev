@@ -8,12 +8,13 @@ Esta es una prueba técnica para **Juniors y Trainees** de React en Live Coding.
 
 Tiene una serie de **requerimientos básicos**, los cuales son **cumplidos.**
 
-🧩 Aquí puedes ver su [**Live Demo**]().
+🧩 Aquí puedes ver su [**Live Demo**](https://prueba-tecnica-abraham.netlify.app/).
 
 Esta prueba contiene:
 
 - Custom Hooks en JavaScript para renderizar las imágenes y un hecho random.
 - Test básicos con la librería [**Playwright**](https://playwright.dev/).
+- [**styled-components**](https://styled-components.com/) para aplicar los estilos.
 
 👇 Aquí abajo encontrarás la prueba
 
