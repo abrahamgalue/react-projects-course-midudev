@@ -14,6 +14,7 @@ Este proyecto utiliza:
 - Los hooks integrados de React **useRef**, **useMemo**, **useCallback**.
 - Manejo de errores y campos obligatorios en **tiempo real.**
 - La herramienta [**just-debounce-it**](https://github.com/angus-c/just#just-debounce-it) de angus-c para realizar el debounce.
+- [**styled-components**](https://styled-components.com/) para aplicar los estilos.
 
 ## Enunciado
 
