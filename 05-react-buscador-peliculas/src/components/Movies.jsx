@@ -15,6 +15,14 @@ export const Movie = styled.li`
 `
 
 export const ReleaseDate = styled.p`
+  @media (prefers-color-scheme: dark) {
+    color: rgb(217, 217, 217, 0.25);
+  }
+
+  @media (prefers-color-scheme: light) {
+    color: rgb(38, 38, 38, 0.75);
+  }
+
   font-weight: 600;
   margin: 0 0 5px calc(10% - 13px);
   text-align: start;
