@@ -3,76 +3,88 @@ import { searchMovies } from '../services/movies'
 
 export function useMovies({ search, sort }) {
   const [movies, setMovies] = useState([
+
     {
-      title: "The Avengers",
-      year: "2012",
-      imdbid: "tt0848228",
-      type: "movie",
-      image: "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
+      title: 'Star Wars: Episode IV - A New Hope',
+      year: '1977',
+      imdbid: 'tt0076759',
+      type: 'movie',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BOTA5NjhiOTAtZWM0ZC00MWNhLThiMzEtZDFkOTk2OTU1ZDJkXkEyXkFqcGdeQXVyMTA4NDI1NTQx._V1_SX300.jpg',
     },
     {
-      title: "Avengers: Endgame",
-      year: "2019",
-      imdbid: "tt4154796",
-      type: "movie",
-      image: "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg"
+      title: 'Star Wars: Episode V - The Empire Strikes Back',
+      year: '1980',
+      imdbid: 'tt0080684',
+      type: 'movie',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg',
     },
     {
-      title: "Avengers: Infinity War",
-      year: "2018",
-      imdbid: "tt4154756",
-      type: "movie",
-      image: "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
+      title: 'Star Wars: Episode VI - Return of the Jedi',
+      year: '1983',
+      imdbid: 'tt0086190',
+      type: 'movie',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg',
     },
     {
-      title: "Avengers: Age of Ultron",
-      year: "2015",
-      imdbid: "tt2395427",
-      type: "movie",
-      image: "https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg"
+      title: 'Star Wars: Episode VII - The Force Awakens',
+      year: '2015',
+      imdbid: 'tt2488496',
+      type: 'movie',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg',
     },
     {
-      title: "The Avengers",
-      year: "1998",
-      imdbid: "tt0118661",
-      type: "movie",
-      image: "https://m.media-amazon.com/images/M/MV5BYWE1NTdjOWQtYTQ2Ny00Nzc5LWExYzMtNmRlOThmOTE2N2I4XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg"
+      title: 'Star Wars: Episode I - The Phantom Menace',
+      year: '1999',
+      imdbid: 'tt0120915',
+      type: 'movie',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BYTRhNjcwNWQtMGJmMi00NmQyLWE2YzItODVmMTdjNWI0ZDA2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg',
     },
     {
-      title: "The Avengers: Earth's Mightiest Heroes",
-      year: "2010–2012",
-      imdbid: "tt1626038",
-      type: "series",
-      image: "https://m.media-amazon.com/images/M/MV5BYzA4ZjVhYzctZmI0NC00ZmIxLWFmYTgtOGIxMDYxODhmMGQ2XkEyXkFqcGdeQXVyNjExODE1MDc@._V1_SX300.jpg"
+      title: 'Star Wars: Episode III - Revenge of the Sith',
+      year: '2005',
+      imdbid: 'tt0121766',
+      type: 'movie',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BNTc4MTc3NTQ5OF5BMl5BanBnXkFtZTcwOTg0NjI4NA@@._V1_SX300.jpg',
     },
     {
-      title: "Ultimate Avengers: The Movie",
-      year: "2006",
-      imdbid: "tt0491703",
-      type: "movie",
-      image: "https://m.media-amazon.com/images/M/MV5BMTYyMjk0NTMwMl5BMl5BanBnXkFtZTgwNzY0NjAwNzE@._V1_SX300.jpg"
+      title: 'Star Wars: Episode II - Attack of the Clones',
+      year: '2002',
+      imdbid: 'tt0121765',
+      type: 'movie',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BMDAzM2M0Y2UtZjRmZi00MzVlLTg4MjEtOTE3NzU5ZDVlMTU5XkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_SX300.jpg',
     },
     {
-      title: "Ultimate Avengers II",
-      year: "2006",
-      imdbid: "tt0803093",
-      type: "movie",
-      image: "https://m.media-amazon.com/images/M/MV5BZjI3MTI5ZTYtZmNmNy00OGZmLTlhNWMtNjZiYmYzNDhlOGRkL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg"
+      title: 'Rogue One: A Star Wars Story',
+      year: '2016',
+      imdbid: 'tt3748528',
+      type: 'movie',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BMjEwMzMxODIzOV5BMl5BanBnXkFtZTgwNzg3OTAzMDI@._V1_SX300.jpg',
     },
     {
-      title: "The Avengers",
-      year: "1961–1969",
-      imdbid: "tt0054518",
-      type: "series",
-      image: "https://m.media-amazon.com/images/M/MV5BZWQwZTdjMDUtNTY1YS00MDI0LWFkNjYtZDA4MDdmZjdlMDRlXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg"
+      title: 'Star Wars: Episode VIII - The Last Jedi',
+      year: '2017',
+      imdbid: 'tt2527336',
+      type: 'movie',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BMjQ1MzcxNjg4N15BMl5BanBnXkFtZTgwNzgwMjY4MzI@._V1_SX300.jpg',
     },
     {
-      title: "Avengers Assemble",
-      year: "2012–2019",
-      imdbid: "tt2455546",
-      type: "series",
-      image: "https://m.media-amazon.com/images/M/MV5BMTY0NTUyMDQwOV5BMl5BanBnXkFtZTgwNjAwMTA0MDE@._V1_SX300.jpg"
+      title: 'Star Wars: Episode IX - The Rise of Skywalker',
+      year: '2019',
+      imdbid: 'tt2527338',
+      type: 'movie',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BMDljNTQ5ODItZmQwMy00M2ExLTljOTQtZTVjNGE2NTg0NGIxXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_SX300.jpg',
     }
+
   ])
   const [loading, setLoading] = useState(false)
   // el error no se usa pero se puede implementar
