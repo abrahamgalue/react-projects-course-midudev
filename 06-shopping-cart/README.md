@@ -13,6 +13,7 @@ Este proyecto contiene:
 - Estado global utilizando el hook **useContext.**
 - Estados complejos con el hook **useReducer.**
 - Y el correcto uso del hook **useID.**
+- [**styled-components**](https://styled-components.com/) para aplicar los estilos.
 
 👇 Aquí debajo encontrarás la prueba técnica.
 
