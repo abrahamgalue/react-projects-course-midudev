@@ -1,8 +1,7 @@
-import './Cart.css'
-
 import { useId } from 'react'
 import { CartIcon, ClearCartIcon } from './Icons'
 import { useCart } from '../hooks/useCart'
+import { CartLabel, Checkbox, CartSection } from './Cart.styled'
 
 function CartItem({ thumbnail, title, price, quantity, addToCart }) {
   return (
@@ -26,12 +25,12 @@ export function Cart() {
 
   return (
     <>
-      <label className='cart-button' htmlFor={cartCheckboxId}>
+      <CartLabel htmlFor={cartCheckboxId}>
         <CartIcon />
-      </label>
-      <input id={cartCheckboxId} type='checkbox' hidden />
+      </CartLabel>
+      <Checkbox id={cartCheckboxId} />
 
-      <aside className='cart'>
+      <CartSection>
         <ul>
           {cart.map(product => (
             <CartItem
@@ -45,7 +44,7 @@ export function Cart() {
         <button onClick={clearCart}>
           <ClearCartIcon />
         </button>
-      </aside>
+      </CartSection>
     </>
   )
 }

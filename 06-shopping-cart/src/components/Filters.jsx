@@ -1,7 +1,14 @@
 import { useId } from 'react'
 import { useFilters } from '../hooks/useFilters'
 import { products } from '../mocks/products'
-import './Filters.css'
+import {
+  FilterSection,
+  Div,
+  Label,
+  Span,
+  Select,
+  Option,
+} from './Filters.styled'
 
 export function Filters() {
   const categories = Array.from(
@@ -28,9 +35,9 @@ export function Filters() {
   }
 
   return (
-    <section className='filters'>
-      <div>
-        <label htmlFor={minPriceFilterId}>Price starting from:</label>
+    <FilterSection>
+      <Div>
+        <Label htmlFor={minPriceFilterId}>Price starting from:</Label>
         <input
           id={minPriceFilterId}
           type='range'
@@ -39,24 +46,24 @@ export function Filters() {
           onChange={handleChangeMinPrice}
           value={filters.minPrice}
         />
-        <span>${filters.minPrice}</span>
-      </div>
+        <Span>${filters.minPrice}</Span>
+      </Div>
 
-      <div>
+      <Div>
         <label htmlFor={categoryFilterId}>Category</label>
-        <select
+        <Select
           id={categoryFilterId}
           onChange={handleChangeCategory}
           value={filters.category}
         >
-          <option value='all'>All</option>
+          <Option value='all'>All</Option>
           {categories.map(category => (
-            <option key={category} value={category}>
+            <Option key={category} value={category}>
               {category.replace(/-/g, ' ')}
-            </option>
+            </Option>
           ))}
-        </select>
-      </div>
-    </section>
+        </Select>
+      </Div>
+    </FilterSection>
   )
 }
