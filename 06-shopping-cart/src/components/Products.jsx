@@ -1,6 +1,11 @@
-import './Products.css'
 import { AddToCartIcon, RemoveFromCartIcon } from './Icons'
 import { useCart } from '../hooks/useCart'
+import {
+  StyledProducts,
+  ProductInfo,
+  ProductFooter,
+  ProductPrice,
+} from './Products.styled'
 
 export function Products({ products }) {
   const { addToCart, removeFromCart, cart } = useCart()
@@ -10,7 +15,7 @@ export function Products({ products }) {
   }
 
   return (
-    <main className='products'>
+    <StyledProducts>
       <ul>
         {products.slice(0, 20).map(product => {
           const isProductInCart = checkProductInCart(product)
@@ -18,11 +23,11 @@ export function Products({ products }) {
           return (
             <li key={product.id}>
               <img src={product.thumbnail} alt={product.title} />
-              <div className='productInfo'>
+              <ProductInfo>
                 <p>{product.title}</p>
                 <strong>{product.brand}</strong>
-              </div>
-              <div className='productFooter'>
+              </ProductInfo>
+              <ProductFooter>
                 <button
                   style={{ color: isProductInCart ? 'crimson' : 'green' }}
                   onClick={() =>
@@ -33,12 +38,12 @@ export function Products({ products }) {
                 >
                   {isProductInCart ? <RemoveFromCartIcon /> : <AddToCartIcon />}
                 </button>
-                <p className='productPrice'>${product.price}</p>
-              </div>
+                <ProductPrice>${product.price}</ProductPrice>
+              </ProductFooter>
             </li>
           )
         })}
       </ul>
-    </main>
+    </StyledProducts>
   )
 }

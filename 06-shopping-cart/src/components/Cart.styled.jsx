@@ -27,25 +27,25 @@ export const CartSection = styled.aside`
   background: #fff;
   box-shadow: 0 0 10px 1px rgb(15, 15, 15, 0.2);
   display: none;
-  padding: 20px;
+  padding: 35px;
   position: fixed;
   right: 0px;
   top: 0px;
-  width: 230px;
+  width: 200px;
   user-select: none;
   height: 100%;
   overflow: auto;
 
   img {
     aspect-ratio: 16/9;
-    width: 70%;
+    width: 75%;
     border-radius: 8px;
     object-fit: fill;
   }
 
   li {
-    border-bottom: 1px solid #444;
-    padding-bottom: 8px;
+    // border-bottom: 1px solid #444;
+    padding-bottom: 16px;
   }
 
   footer {
