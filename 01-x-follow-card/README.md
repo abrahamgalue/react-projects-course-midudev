@@ -6,7 +6,7 @@
 
 ### Cards para seguir a usuarios
 
-> 🧩 Aquí puedes ver su [**Live Demo.**](https://x-follow-card-abraham.netlify.app/).
+> 🧩 Aquí puedes ver su [**Live Demo.**](https://x-follow-card-abraham.netlify.app/)
 
 ![vista-previa](./public/preview/01-page-preview.png)
 
