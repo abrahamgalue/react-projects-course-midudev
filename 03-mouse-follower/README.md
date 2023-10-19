@@ -4,11 +4,19 @@
 
 </div>
 
+### Seguidor del mouse
+
+> 🧩 Aquí puedes ver su [**Live Demo.**](https://mouse-follower-abraham.netlify.app/)
+
+![vista-previa](./public/preview/01-page-preview.png)
+
+## 🚀 Descripción
+
 Este es un pequeño proyecto para **emular el seguimiento de un mouse**.
 
-🧩 Aquí puedes ver su [**Live Demo**](https://mouse-follower-abraham.netlify.app/)
+## 🎭 Tecnologías
 
-Este proyecto incluye:
+El proyecto utiliza las siguientes tecnologías:
 
 - Los hooks de React, **useState** y **useEffect.**
 - Estilos en línea.
