@@ -1,3 +1,13 @@
+<div align='center'>
+
+# React: Abraham Router
+
+</div>
+
+### Mi propio React router
+
+![vista-previa]()
+
 # Crea un React Router desde cero
 
 - [x] Instalar el linter
@@ -8,8 +18,8 @@
 - [x] Crear componente Router para hacerlo más declarativo
 - [x] Soportar ruta por defecto (404)
 - [x] Soportar rutas con parámetros
-- [] Componente <Route /> para hacerlo declarativo
-- [] Lazy Loading de las rutas
-- [] Hacer un i18n con las rutas
+- [x] Componente <Route /> para hacerlo declarativo
+- [x] Lazy Loading de las rutas
+- [x] Hacer un i18n con las rutas
 - [] Testing
 - [] Publicar el paquete en NPM
