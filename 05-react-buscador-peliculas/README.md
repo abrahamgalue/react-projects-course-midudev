@@ -4,11 +4,19 @@
 
 </div>
 
+### Buscador de películas
+
+> 🧩 Aquí puedes ver su [**Live Demo.**](https://movies-search-abraham.netlify.app/)
+
+![vista-previa](./public/preview/01-page-preview.png)
+
+## 🚀 Descripción
+
 Este es un proyecto basado en una prueba técnica que tiene una serie de requerimientos, los cuales son cumplidos.
 
-🧩 Aquí puedes ver su [**Live Demo**](https://movies-search-abraham.netlify.app/)
+## 🎭 Tecnologías
 
-Este proyecto utiliza:
+El proyecto utiliza las siguientes tecnologías:
 
 - Custom hooks.
 - Los hooks integrados de React **useRef**, **useMemo**, **useCallback**.
