@@ -4,13 +4,21 @@
 
 </div>
 
+### Prueba técnica
+
+> 🧩 Aquí puedes ver su [**Live Demo.**](https://prueba-tecnica-abraham.netlify.app/)
+
+![vista-previa](./public/preview/01-page-preview.png)
+
+## 🚀 Descripción
+
 Esta es una prueba técnica para **Juniors y Trainees** de React en Live Coding.
 
 Tiene una serie de **requerimientos básicos**, los cuales son **cumplidos.**
 
-🧩 Aquí puedes ver su [**Live Demo**](https://prueba-tecnica-abraham.netlify.app/).
+## 🎭 Tecnologías
 
-Esta prueba contiene:
+El proyecto utiliza las siguientes tecnologías:
 
 - Custom Hooks en JavaScript para renderizar las imágenes y un hecho random.
 - Test básicos con la librería [**Playwright**](https://playwright.dev/).
