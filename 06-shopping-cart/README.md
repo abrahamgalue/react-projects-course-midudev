@@ -4,11 +4,19 @@
 
 </div>
 
+### Carrito de compras
+
+> 🧩 Aquí puedes ver su [**Live Demo**](https://shopping-cart-abraham.netlify.app/).
+
+![vista-previa](./public/preview/01-page-preview.png)
+
+## 🚀 Descripción
+
 Este proyecto esta creado en base a una prueba tecnica que posee unos ciertos **requerimientos** los cuales son **cumplidos**.
 
-🧩 Aquí puedes ver su [**Live Demo**](https://shopping-cart-abraham.netlify.app/).
+## 🎭 Tecnologías
 
-Este proyecto contiene:
+El proyecto utiliza las siguientes tecnologías:
 
 - Estado global utilizando el hook **useContext.**
 - Estados complejos con el hook **useReducer.**
