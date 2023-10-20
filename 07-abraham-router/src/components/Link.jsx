@@ -1,4 +1,4 @@
-import { EVENTS, BUTTON } from './consts'
+import { EVENTS, BUTTON } from '../utils/consts'
 
 export function navigate(href) {
   window.history.pushState({}, '', href)

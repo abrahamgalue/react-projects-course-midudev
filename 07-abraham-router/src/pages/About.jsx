@@ -1,4 +1,4 @@
-import { Link } from '../Link.jsx'
+import { Link } from '../components/Link.jsx'
 
 console.log('Estamos importando el archivo About.jsx')
 

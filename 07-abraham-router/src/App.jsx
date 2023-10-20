@@ -6,8 +6,8 @@ import { lazy, Suspense } from 'react'
 import Page404 from './pages/404'
 import SearchPage from './pages/Search'
 
-import { Router } from './Router'
-import { Route } from './Route'
+import { Router } from './components/Router'
+import { Route } from './components/Route'
 
 const LazyHomePage = lazy(() => import('./pages/Home.jsx')) // lazy loading
 const LazyAboutPage = lazy(() => import('./pages/About.jsx')) // import dinamico
