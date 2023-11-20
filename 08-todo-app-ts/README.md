@@ -1,4 +1,18 @@
-## Crear un TodoMVC con TypeScript
+<div align='center'>
+
+# 🖍 TypeScript and React: To-Do App
+
+</div>
+
+### Todo App con TypeScript y animaciones.
+
+## 🚀 Descripción
+
+Este proyecto es una Lista de Tareas hecha con TypeScript y React.
+
+Que además contiene animaciones.
+
+## 🧞‍♂️ Especifícaciones:
 
 - [x] Inicializar proyecto con Vite
 - [x] Añadir linter para TypeScript + React
