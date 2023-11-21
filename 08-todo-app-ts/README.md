@@ -6,6 +6,8 @@
 
 ### Todo App con TypeScript y animaciones.
 
+![vista-previa](./public/preview/01-page-preview.png)
+
 ## 🚀 Descripción
 
 Este proyecto es una Lista de Tareas hecha con TypeScript y React.

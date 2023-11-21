@@ -13,17 +13,22 @@ import { Header } from './components/Header'
 const mockTodos = [
   {
     id: '1',
-    title: 'Learn React',
+    title: 'Aprender React',
     completed: true,
   },
   {
     id: '2',
-    title: 'Learn TypeScript',
+    title: 'Aprender TypeScript',
     completed: false,
   },
   {
     id: '3',
-    title: 'Learn JavaScript',
+    title: 'Realizar tareas',
+    completed: false,
+  },
+  {
+    id: '4',
+    title: 'Dar de comer a Scooby',
     completed: false,
   },
 ]
