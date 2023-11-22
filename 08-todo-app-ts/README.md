@@ -14,6 +14,11 @@ Este proyecto es una Lista de Tareas hecha con TypeScript y React.
 
 Que además contiene animaciones.
 
+## 🎭 Tecnologías
+
+- [**todomvc-app-css**](https://github.com/tastejs/todomvc-app-css) para aplicar los estilos de la app.
+- [**TypeScript**](https://www.typescriptlang.org/) para crear tipos reutilizables a través de la aplicación.
+
 ## 🧞‍♂️ Especifícaciones:
 
 - [x] Inicializar proyecto con Vite
