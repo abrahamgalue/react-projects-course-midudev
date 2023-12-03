@@ -23,6 +23,7 @@ Aquí puedes ver los vídeos con las clases:
 - 05: [React Hooks: useRef, useMemo, useCallback](https://youtu.be/GOEiMwDJ3lc)
 - 06: [React Hooks: useContext, useReducer, useId](https://www.youtube.com/watch?v=B9tDYAZZxcE)
 - 07: [React Router + Lazy Loading](https://www.youtube.com/watch?v=K2NcGYajvY4)
+- 08: [React + TypeScript (Día 01): props y state](https://www.youtube.com/watch?v=4lAYfsq-2TE)
 
 <div align='center'>
 
