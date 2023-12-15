@@ -8,7 +8,7 @@
 
 > 🧩 Aquí puedes ver su publicación en [**NPM.**](https://www.npmjs.com/package/abraham-router)
 
-![vista-previa](./public/preview/01-page-preview.png)
+![vista-previa](./public/preview/01-page-preview.jpg)
 
 ## 🚀 Descripción
 
