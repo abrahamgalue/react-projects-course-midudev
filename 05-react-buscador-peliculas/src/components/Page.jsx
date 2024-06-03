@@ -18,8 +18,9 @@ export const Title = styled.h1`
 export const Form = styled.form`
   align-items: center;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   gap: 0.75rem;
+  justify-content: center;
 `
 
 export const Content = styled.main`
