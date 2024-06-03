@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Todos } from './components/Todos'
 import {
-  FilterValue,
-  TodoTitle,
+  type FilterValue,
+  type TodoTitle,
   type TodoId,
   type Todo as TodoType,
 } from './type'
@@ -10,31 +10,8 @@ import { TODO_FILTERS } from './consts'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 
-const mockTodos = [
-  {
-    id: '1',
-    title: 'Aprender React',
-    completed: true,
-  },
-  {
-    id: '2',
-    title: 'Aprender TypeScript',
-    completed: false,
-  },
-  {
-    id: '3',
-    title: 'Realizar tareas',
-    completed: false,
-  },
-  {
-    id: '4',
-    title: 'Dar de comer a Scooby',
-    completed: false,
-  },
-]
-
 const App = (): JSX.Element => {
-  const [todos, setTodos] = useState(mockTodos)
+  const [todos, setTodos] = useState([] as TodoType[])
   const [filterSelected, setFilterSelected] = useState<FilterValue>(
     TODO_FILTERS.ALL
   )
@@ -48,7 +25,7 @@ const App = (): JSX.Element => {
     id,
     completed,
   }: Pick<TodoType, 'id' | 'completed'>): void => {
-    const newTodos = todos.map(todo => {
+    const newTodos = todos.map((todo: TodoType) => {
       if (todo.id === id) {
         return {
           ...todo,
@@ -66,12 +43,12 @@ const App = (): JSX.Element => {
     setFilterSelected(filter)
   }
 
-  const handleRemoveAllCompleted = () => {
-    const newTodos = todos.filter(todo => !todo.completed)
+  const handleRemoveAllCompleted = (): void => {
+    const newTodos = todos.filter((todo: TodoType) => !todo.completed)
     setTodos(newTodos)
   }
 
-  const activeCount = todos.filter(todo => !todo.completed).length
+  const activeCount = todos.filter((todo: TodoType) => !todo.completed).length
   const completedCount = todos.length - activeCount
 
   const filteredTodos = todos.filter(todo => {
