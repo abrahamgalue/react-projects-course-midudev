@@ -2,7 +2,7 @@ import { Movies, Movie, ReleaseDate, MovieImage, MovieTitle } from './Movies'
 
 export function ListOfMovies({ movies }) {
   return (
-    <Movies key={movies}>
+    <Movies>
       {movies.map(movie => (
         <Movie key={movie.id}>
           <ReleaseDate>
