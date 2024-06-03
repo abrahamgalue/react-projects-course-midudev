@@ -1,10 +1,19 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
 body {
   margin: 0;
   background: black;
   font-family: system-ui, sans-serif;
-  display: grid;
-  place-content: center;
-  min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* .App {
