@@ -7,6 +7,11 @@ export const FilterSection = styled.section`
   font-weight: 700;
   justify-content: space-between;
   user-select: none;
+
+  @media (max-width: 615px) {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 `
 export const Div = styled.div`
   align-items: center;

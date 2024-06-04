@@ -23,4 +23,8 @@ export const StyledFooter = styled.footer`
     margin: 0;
     display: flex;
   }
+
+  @media (max-width: 615px) {
+    display: none;
+  }
 `
