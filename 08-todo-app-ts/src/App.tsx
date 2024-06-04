@@ -9,6 +9,7 @@ import {
 import { TODO_FILTERS } from './consts'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
+import { Copyright } from './components/Copyright'
 
 const App = (): JSX.Element => {
   const [todos, setTodos] = useState([] as TodoType[])
@@ -83,6 +84,7 @@ const App = (): JSX.Element => {
         onClearCompleted={handleRemoveAllCompleted}
         handleFilterChange={handleFilterChange}
       />
+      <Copyright />
     </div>
   )
 }
