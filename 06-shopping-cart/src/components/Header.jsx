@@ -1,17 +1,12 @@
-import { Filters } from './Filters.jsx'
+import { StyledHeader, StyledTitle } from './Header.styled.jsx'
 import { HeaderIcon } from './Icons.jsx'
-
-const styles = {
-  header: {
-    userSelect: 'none',
-  },
-}
+import { Filters } from './Filters.jsx'
 
 export function Header() {
   return (
-    <header>
-      <h1 style={styles.header}>Shopping Cart {<HeaderIcon />}</h1>
+    <StyledHeader>
+      <StyledTitle>Shopping Cart {<HeaderIcon />}</StyledTitle>
       <Filters />
-    </header>
+    </StyledHeader>
   )
 }

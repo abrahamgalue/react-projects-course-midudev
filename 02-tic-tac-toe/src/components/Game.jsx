@@ -23,7 +23,7 @@ const BoardContainer = styled.main`
     padding: 8px 12px;
     margin: 25px;
     background: #202124;
-    border: 2px transparent;
+    border: none;
     color: #14bdac;
     width: 120px;
     border-radius: 25px;
@@ -31,6 +31,7 @@ const BoardContainer = styled.main`
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+    user-select: none;
   }
 
   & button:hover {

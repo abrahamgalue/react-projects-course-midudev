@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const StyledProducts = styled.main`
-  align-items: center;
-
   ul {
     display: grid;
     gap: 1rem;
@@ -27,6 +25,24 @@ export const StyledProducts = styled.main`
     object-fit: contain;
     background: #fff;
   }
+
+  @media (max-width: 615px) {
+    margin: 0 auto;
+    width: 80vw;
+
+    ul {
+      grid-template-columns: none;
+    }
+
+    li {
+      font-size: 8px;
+      gap: 5px;
+    }
+
+    img {
+      width: 150px;
+    }
+  }
 `
 
 export const ProductInfo = styled.div`
@@ -48,6 +64,18 @@ export const ProductInfo = styled.div`
     font-weight: 400;
     font-size: 1.4rem;
   }
+
+  @media (max-width: 615px) {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    p,
+    strong {
+      font-size: 14px;
+    }
+  }
 `
 
 export const ProductFooter = styled.div`
@@ -63,4 +91,8 @@ export const ProductPrice = styled.p`
   font-weight: 400;
   font-size: 1.1rem;
   color: lch(35% 0 0);
+
+  @media (max-width: 615px) {
+    font-size: 16px;
+  }
 `

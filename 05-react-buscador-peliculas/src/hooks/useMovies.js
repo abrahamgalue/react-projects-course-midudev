@@ -3,11 +3,10 @@ import { searchMovies } from '../services/movies'
 
 export function useMovies({ search, sort }) {
   const [movies, setMovies] = useState([
-
     {
       title: 'Star Wars: Episode IV - A New Hope',
       year: '1977',
-      imdbid: 'tt0076759',
+      id: 'tt0076759',
       type: 'movie',
       image:
         'https://m.media-amazon.com/images/M/MV5BOTA5NjhiOTAtZWM0ZC00MWNhLThiMzEtZDFkOTk2OTU1ZDJkXkEyXkFqcGdeQXVyMTA4NDI1NTQx._V1_SX300.jpg',
@@ -15,7 +14,7 @@ export function useMovies({ search, sort }) {
     {
       title: 'Star Wars: Episode V - The Empire Strikes Back',
       year: '1980',
-      imdbid: 'tt0080684',
+      id: 'tt0080684',
       type: 'movie',
       image:
         'https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg',
@@ -23,7 +22,7 @@ export function useMovies({ search, sort }) {
     {
       title: 'Star Wars: Episode VI - Return of the Jedi',
       year: '1983',
-      imdbid: 'tt0086190',
+      id: 'tt0086190',
       type: 'movie',
       image:
         'https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg',
@@ -31,7 +30,7 @@ export function useMovies({ search, sort }) {
     {
       title: 'Star Wars: Episode VII - The Force Awakens',
       year: '2015',
-      imdbid: 'tt2488496',
+      id: 'tt2488496',
       type: 'movie',
       image:
         'https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg',
@@ -39,7 +38,7 @@ export function useMovies({ search, sort }) {
     {
       title: 'Star Wars: Episode I - The Phantom Menace',
       year: '1999',
-      imdbid: 'tt0120915',
+      id: 'tt0120915',
       type: 'movie',
       image:
         'https://m.media-amazon.com/images/M/MV5BYTRhNjcwNWQtMGJmMi00NmQyLWE2YzItODVmMTdjNWI0ZDA2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg',
@@ -47,7 +46,7 @@ export function useMovies({ search, sort }) {
     {
       title: 'Star Wars: Episode III - Revenge of the Sith',
       year: '2005',
-      imdbid: 'tt0121766',
+      id: 'tt0121766',
       type: 'movie',
       image:
         'https://m.media-amazon.com/images/M/MV5BNTc4MTc3NTQ5OF5BMl5BanBnXkFtZTcwOTg0NjI4NA@@._V1_SX300.jpg',
@@ -55,7 +54,7 @@ export function useMovies({ search, sort }) {
     {
       title: 'Star Wars: Episode II - Attack of the Clones',
       year: '2002',
-      imdbid: 'tt0121765',
+      id: 'tt0121765',
       type: 'movie',
       image:
         'https://m.media-amazon.com/images/M/MV5BMDAzM2M0Y2UtZjRmZi00MzVlLTg4MjEtOTE3NzU5ZDVlMTU5XkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_SX300.jpg',
@@ -63,7 +62,7 @@ export function useMovies({ search, sort }) {
     {
       title: 'Rogue One: A Star Wars Story',
       year: '2016',
-      imdbid: 'tt3748528',
+      id: 'tt3748528',
       type: 'movie',
       image:
         'https://m.media-amazon.com/images/M/MV5BMjEwMzMxODIzOV5BMl5BanBnXkFtZTgwNzg3OTAzMDI@._V1_SX300.jpg',
@@ -71,7 +70,7 @@ export function useMovies({ search, sort }) {
     {
       title: 'Star Wars: Episode VIII - The Last Jedi',
       year: '2017',
-      imdbid: 'tt2527336',
+      id: 'tt2527336',
       type: 'movie',
       image:
         'https://m.media-amazon.com/images/M/MV5BMjQ1MzcxNjg4N15BMl5BanBnXkFtZTgwNzgwMjY4MzI@._V1_SX300.jpg',
@@ -79,7 +78,7 @@ export function useMovies({ search, sort }) {
     {
       title: 'Star Wars: Episode IX - The Rise of Skywalker',
       year: '2019',
-      imdbid: 'tt2527338',
+      id: 'tt2527338',
       type: 'movie',
       image:
         'https://m.media-amazon.com/images/M/MV5BMDljNTQ5ODItZmQwMy00M2ExLTljOTQtZTVjNGE2NTg0NGIxXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_SX300.jpg',
