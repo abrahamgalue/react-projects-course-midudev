@@ -14,9 +14,9 @@ export function Filters() {
   const categories = Array.from(
     new Set(products.map(product => product.category))
   )
-
   const { filters, setFilters } = useFilters()
 
+  const maxPrice = Math.max(...products.map(product => product.price))
   const minPriceFilterId = useId()
   const categoryFilterId = useId()
 
@@ -42,7 +42,7 @@ export function Filters() {
           id={minPriceFilterId}
           type='range'
           min='0'
-          max='1749'
+          max={maxPrice}
           onChange={handleChangeMinPrice}
           value={filters.minPrice}
         />
