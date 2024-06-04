@@ -38,6 +38,6 @@ Aquí puedes ver los vídeos con las clases:
 | `05`   | Prueba técnica con formularios, buscador utilizando una API | [Ver](05-react-buscador-peliculas) | [Visitar](https://movies-search-abraham.netlify.app/)   |
 | `06`   | Creación de un ecommerce con carrito de compras             | [Ver](06-shopping-cart)            | [Visitar](https://shopping-cart-abraham.netlify.app/)   |
 | `07`   | Creación de un React Router desde cero                      | [Ver](07-abraham-router)           | [Visitar](https://www.npmjs.com/package/abraham-router) |
-| `08`   | Todo App con TypeScript y animaciones                       | [Ver](08-todo-app-ts)              | [Visitar](https://todo-app-ts-abraham.netlify.app/)     |
+| `08`   | Todo App con TypeScript y animaciones                       | [Ver](08-todo-app-ts)              | [Visitar](https://todoapp-ts-abraham.netlify.app/)      |
 
 </div>
