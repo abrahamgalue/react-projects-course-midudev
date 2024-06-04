@@ -24,6 +24,7 @@ Aquí puedes ver los vídeos con las clases:
 - 06: [React Hooks: useContext, useReducer, useId](https://www.youtube.com/watch?v=B9tDYAZZxcE)
 - 07: [React Router + Lazy Loading](https://www.youtube.com/watch?v=K2NcGYajvY4)
 - 08: [React + TypeScript (Día 01): props y state](https://www.youtube.com/watch?v=4lAYfsq-2TE)
+- 09: [React + TypeScript + ChatGPT - Clon de Google Translate](https://www.youtube.com/watch?v=kZhabulNCUc)
 
 <div align='center'>
 
@@ -39,5 +40,6 @@ Aquí puedes ver los vídeos con las clases:
 | `06`   | Creación de un ecommerce con carrito de compras             | [Ver](06-shopping-cart)            | [Visitar](https://shopping-cart-abraham.netlify.app/)   |
 | `07`   | Creación de un React Router desde cero                      | [Ver](07-abraham-router)           | [Visitar](https://www.npmjs.com/package/abraham-router) |
 | `08`   | Todo App con TypeScript y animaciones                       | [Ver](08-todo-app-ts)              | [Visitar](https://todoapp-ts-abraham.netlify.app/)      |
+| `09`   | Crear un Google Translate con ChatGPT y TypeScript          | [Ver](09-google-translate-clone/)  | Visitar                                                 |
 
 </div>
