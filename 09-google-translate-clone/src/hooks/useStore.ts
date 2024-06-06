@@ -19,30 +19,48 @@ function reducer(state: State, action: Action) {
       // lo evitamos en los componentes
       if (state.fromLanguage === AUTO_LANGUAGE) return state
 
+      const loading = state.fromText !== ''
+
       return {
         ...state,
+        loading,
+        fromText: state.result,
         fromLanguage: state.toLanguage,
         toLanguage: state.fromLanguage,
       }
     }
     case 'SET_FROM_LANGUAGE': {
+      if (state.fromLanguage === action.payload) return state
+
+      const loading = state.fromText !== ''
+
       return {
         ...state,
         fromLanguage: action.payload,
+        result: '',
+        loading,
       }
     }
     case 'SET_TO_LANGUAGE': {
+      if (state.toLanguage === action.payload) return state
+
+      const loading = state.fromText !== ''
+
       return {
         ...state,
         toLanguage: action.payload,
+        result: '',
+        loading,
       }
     }
     case 'SET_FROM_TEXT': {
+      const loading = action.payload !== ''
+
       return {
         ...state,
         fromText: action.payload,
         result: '',
-        loading: true,
+        loading,
       }
     }
     case 'SET_RESULT': {
