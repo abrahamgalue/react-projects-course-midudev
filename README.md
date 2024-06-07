@@ -30,16 +30,16 @@ Aquí puedes ver los vídeos con las clases:
 
 ### 🍂 Proyectos de React con código
 
-| Número | Proyecto                                                    | Código                             | Web                                                     |
-| ------ | ----------------------------------------------------------- | ---------------------------------- | ------------------------------------------------------- |
-| `01`   | X Follow Card                                               | [Ver](01-x-follow-card/)           | [Visitar](https://x-follow-card-abraham.netlify.app/)   |
-| `02`   | Tic Tac Toe                                                 | [Ver](02-tic-tac-toe/)             | [Visitar](https://tic-tac-toe-abraham.netlify.app/)     |
-| `03`   | Mouse Follower                                              | [Ver](03-mouse-follower)           | [Visitar](https://mouse-follower-abraham.netlify.app/)  |
-| `04`   | Prueba técnica con Promesas, fetching y testing E2E         | [Ver](04-react-prueba-tecnica)     | [Visitar](https://prueba-tecnica-abraham.netlify.app/)  |
-| `05`   | Prueba técnica con formularios, buscador utilizando una API | [Ver](05-react-buscador-peliculas) | [Visitar](https://movies-search-abraham.netlify.app/)   |
-| `06`   | Creación de un ecommerce con carrito de compras             | [Ver](06-shopping-cart)            | [Visitar](https://shopping-cart-abraham.netlify.app/)   |
-| `07`   | Creación de un React Router desde cero                      | [Ver](07-abraham-router)           | [Visitar](https://www.npmjs.com/package/abraham-router) |
-| `08`   | Todo App con TypeScript y animaciones                       | [Ver](08-todo-app-ts)              | [Visitar](https://todoapp-ts-abraham.netlify.app/)      |
-| `09`   | Crear un Google Translate con ChatGPT y TypeScript          | [Ver](09-google-translate-clone/)  | Visitar                                                 |
+| Número | Proyecto                                                    | Código                             | Web                                                                 |
+| ------ | ----------------------------------------------------------- | ---------------------------------- | ------------------------------------------------------------------- |
+| `01`   | X Follow Card                                               | [Ver](01-x-follow-card/)           | [Visitar](https://x-follow-card-abraham.netlify.app/)               |
+| `02`   | Tic Tac Toe                                                 | [Ver](02-tic-tac-toe/)             | [Visitar](https://tic-tac-toe-abraham.netlify.app/)                 |
+| `03`   | Mouse Follower                                              | [Ver](03-mouse-follower)           | [Visitar](https://mouse-follower-abraham.netlify.app/)              |
+| `04`   | Prueba técnica con Promesas, fetching y testing E2E         | [Ver](04-react-prueba-tecnica)     | [Visitar](https://prueba-tecnica-abraham.netlify.app/)              |
+| `05`   | Prueba técnica con formularios, buscador utilizando una API | [Ver](05-react-buscador-peliculas) | [Visitar](https://movies-search-abraham.netlify.app/)               |
+| `06`   | Creación de un ecommerce con carrito de compras             | [Ver](06-shopping-cart)            | [Visitar](https://shopping-cart-abraham.netlify.app/)               |
+| `07`   | Creación de un React Router desde cero                      | [Ver](07-abraham-router)           | [Visitar](https://www.npmjs.com/package/abraham-router)             |
+| `08`   | Todo App con TypeScript y animaciones                       | [Ver](08-todo-app-ts)              | [Visitar](https://todoapp-ts-abraham.netlify.app/)                  |
+| `09`   | Crear un Google Translate con ChatGPT y TypeScript          | [Ver](09-google-translate-clone/)  | [Visitar](https://google-translate-clone-abrahamgalue.netlify.app/) |
 
 </div>
