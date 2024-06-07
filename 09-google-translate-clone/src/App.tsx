@@ -1,14 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Container, Row, Col, Button, Stack } from 'react-bootstrap'
 import './App.css'
-import { useDebounce } from './hooks/useDebounce'
 import { useStore } from './hooks/useStore'
-import { AUTO_LANGUAGE } from './constants'
-import { ArrowsIcon } from './components/Icons'
+import { useDebounce } from './hooks/useDebounce'
+import { useEffect } from 'react'
+import { Container, Row, Col, Button, Stack } from 'react-bootstrap'
+import { AUTO_LANGUAGE, VOICE_FOR_LANGUAGE } from './constants'
+import { ArrowsIcon, ClipboardIcon, SpeakerIcon } from './components/Icons'
 import { LanguageSelector } from './components/LanguageSelector'
 import { SectionType } from './types.d'
 import { TextArea } from './components/TextArea'
-import { useEffect } from 'react'
 import { translate } from './services/translate'
 
 function App() {
@@ -37,6 +37,17 @@ function App() {
       })
       .catch(() => setResult('Error'))
   }, [debouncedFromText, fromLanguage, toLanguage])
+
+  const handleClipboard = () => {
+    navigator.clipboard.writeText(result).then(() => {})
+  }
+
+  const handleSpeak = () => {
+    const utterance = new SpeechSynthesisUtterance(result)
+    utterance.lang = VOICE_FOR_LANGUAGE[toLanguage]
+    utterance.rate = 0.9
+    speechSynthesis.speak(utterance)
+  }
 
   return (
     <Container fluid>
@@ -75,12 +86,31 @@ function App() {
               value={toLanguage}
               onChange={setToLanguage}
             />
-            <TextArea
-              loading={loading}
-              type={SectionType.To}
-              value={result}
-              onChange={setResult}
-            />
+            <div style={{ position: 'relative' }}>
+              <TextArea
+                loading={loading}
+                type={SectionType.To}
+                value={result}
+                onChange={setResult}
+              />
+              {fromText && (
+                <div
+                  style={{
+                    position: 'absolute',
+                    left: 0,
+                    bottom: 0,
+                    display: 'flex',
+                  }}
+                >
+                  <Button variant='link' onClick={handleClipboard}>
+                    <ClipboardIcon />
+                  </Button>
+                  <Button variant='link' onClick={handleSpeak}>
+                    <SpeakerIcon />
+                  </Button>
+                </div>
+              )}
+            </div>
           </Stack>
         </Col>
       </Row>
