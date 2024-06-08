@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-type UserId = string
+export type UserId = string
 
 export interface User {
   name: string
@@ -46,3 +46,5 @@ export const userSlice = createSlice({
 })
 
 export default userSlice.reducer
+
+export const { deleteUserById } = userSlice.actions
