@@ -6,10 +6,10 @@ import {
   ProductFooter,
   ProductPrice,
 } from './Products.styled'
-import { useScreenSize } from '../hooks/useScreenSize'
+import { useWindowWidth, SCREEN_BREAK_POINT } from '../hooks/useWindowWidth'
 
 export function Products({ products }) {
-  const { size, SCREEN_BREAK_POINT } = useScreenSize()
+  const width = useWindowWidth()
   const { addToCart, removeFromCart, cart } = useCart()
 
   const checkProductInCart = product => {
@@ -27,7 +27,7 @@ export function Products({ products }) {
               <img src={product.thumbnail} alt={product.title} />
               <ProductInfo>
                 <p>
-                  {size >= SCREEN_BREAK_POINT
+                  {width >= SCREEN_BREAK_POINT
                     ? product.title
                     : product.title.slice(0, 15) + '...'}
                 </p>
