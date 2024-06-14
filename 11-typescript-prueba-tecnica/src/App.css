@@ -12,3 +12,11 @@ header {
   justify-content: center;
   margin-bottom: 45px;
 }
+
+.table--showColors tr:nth-child(odd) {
+  background-color: #333;
+}
+
+.table--showColors tr:nth-child(even) {
+  background-color: #555;
+}

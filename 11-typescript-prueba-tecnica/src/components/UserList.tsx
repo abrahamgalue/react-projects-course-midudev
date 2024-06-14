@@ -2,9 +2,10 @@ import { type User } from '../types.d'
 
 interface Props {
   users: User[]
+  isColored: boolean
 }
 
-export default function UserList({ users }: Props) {
+export default function UserList({ users, isColored }: Props) {
   return (
     <table width='100%'>
       <thead>
@@ -16,7 +17,7 @@ export default function UserList({ users }: Props) {
           <th>Acciones</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody className={isColored ? 'table--showColors' : undefined}>
         {users.map(user => {
           return (
             <tr key={user.login.uuid}>
