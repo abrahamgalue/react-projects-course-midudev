@@ -6,6 +6,7 @@ import UserList from './components/UserList'
 function App() {
   const [results, setResults] = useState<User[]>([])
   const [colors, setColors] = useState(false)
+  const [isOrdered, setIsOrdered] = useState(false)
 
   useEffect(() => {
     fetch('https://randomuser.me/api/?results=100')
@@ -18,6 +19,12 @@ function App() {
       })
   }, [])
 
+  const newResults = isOrdered
+    ? [...results].sort((a, b) =>
+        a.location.country.localeCompare(b.location.country)
+      )
+    : results
+
   return (
     <>
       <h1>Prueba técnica</h1>
@@ -29,9 +36,16 @@ function App() {
         >
           Colorear filas
         </button>
+        <button
+          onClick={() => {
+            setIsOrdered(!isOrdered)
+          }}
+        >
+          Ordenar por país
+        </button>
       </header>
       <main>
-        <UserList isColored={colors} users={results} />
+        <UserList isColored={colors} users={newResults} />
       </main>
     </>
   )
