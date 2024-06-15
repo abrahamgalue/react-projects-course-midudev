@@ -1,11 +1,12 @@
-import { type User } from '../types.d'
+import { type UUID, type User } from '../types.d'
 
 interface Props {
   users: User[]
   isColored: boolean
+  toggleDelete: (id: UUID) => void
 }
 
-export default function UserList({ users, isColored }: Props) {
+export default function UserList({ users, isColored, toggleDelete }: Props) {
   return (
     <table width='100%'>
       <thead>
@@ -31,7 +32,13 @@ export default function UserList({ users, isColored }: Props) {
               <td>{user.name.last}</td>
               <td>{user.location.country}</td>
               <td>
-                <button>Borrar</button>
+                <button
+                  onClick={() => {
+                    toggleDelete(user.login.uuid)
+                  }}
+                >
+                  Borrar
+                </button>
               </td>
             </tr>
           )

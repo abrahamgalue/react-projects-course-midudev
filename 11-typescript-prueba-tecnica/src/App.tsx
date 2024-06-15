@@ -1,6 +1,6 @@
 import './App.css'
 import { useState, useEffect } from 'react'
-import { type User } from './types'
+import { type UUID, type User } from './types'
 import UserList from './components/UserList'
 
 function App() {
@@ -18,6 +18,12 @@ function App() {
         console.error('Error:', err)
       })
   }, [])
+
+  const toggleDelete = (id: UUID) => {
+    const newResults = [...results].filter(user => user.login.uuid !== id)
+
+    setResults(newResults)
+  }
 
   const newResults = isOrdered
     ? [...results].sort((a, b) =>
@@ -45,7 +51,11 @@ function App() {
         </button>
       </header>
       <main>
-        <UserList isColored={colors} users={newResults} />
+        <UserList
+          isColored={colors}
+          users={newResults}
+          toggleDelete={toggleDelete}
+        />
       </main>
     </>
   )

@@ -75,6 +75,8 @@ export interface Login {
   sha256: string
 }
 
+export type UUID = string
+
 export interface Name {
   title: Title
   first: string
