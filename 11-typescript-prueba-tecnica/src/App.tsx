@@ -1,5 +1,5 @@
 import './App.css'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { type UUID, type User } from './types'
 import UserList from './components/UserList'
 
@@ -7,12 +7,14 @@ function App() {
   const [results, setResults] = useState<User[]>([])
   const [colors, setColors] = useState(false)
   const [isOrdered, setIsOrdered] = useState(false)
+  const initialState = useRef<User[]>([])
 
   useEffect(() => {
     fetch('https://randomuser.me/api/?results=100')
       .then(async res => await res.json())
       .then(data => {
         setResults(data.results)
+        initialState.current = data.results
       })
       .catch(err => {
         console.error('Error:', err)
@@ -48,6 +50,13 @@ function App() {
           }}
         >
           Ordenar por país
+        </button>
+        <button
+          onClick={() => {
+            setResults(initialState.current)
+          }}
+        >
+          Resetear estado
         </button>
       </header>
       <main>
