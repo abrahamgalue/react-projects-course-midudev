@@ -1,5 +1,5 @@
 import './App.css'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { type UUID, type User } from './types'
 import UserList from './components/UserList'
 
@@ -7,21 +7,26 @@ function App() {
   const [results, setResults] = useState<User[]>([])
   const [colors, setColors] = useState(false)
   const [isOrdered, setIsOrdered] = useState(false)
+  const [filteredCountry, setFilterCountry] = useState<string | null>(null)
   const initialState = useRef<User[]>([])
 
   const toggleColors = () => {
+    console.log('colores')
     setColors(!colors)
   }
 
   const toggleSortByCountry = () => {
+    console.log('ordenar por país')
     setIsOrdered(!isOrdered)
   }
 
   const handleReset = () => {
+    console.log('resetear estado')
     setResults(initialState.current)
   }
 
   const toggleDelete = (id: UUID) => {
+    console.log('borrar usuario')
     const newResults = [...results].filter(user => user.login.uuid !== id)
 
     setResults(newResults)
@@ -39,26 +44,25 @@ function App() {
       })
   }, [])
 
-  const toggleFilter = (country: string) => {
-    if (country === '') {
-      setResults(initialState.current)
-      return
-    }
+  const filteredUsers = useMemo(() => {
+    console.log('filtrar por input')
 
-    const newResults = [...results].filter(user =>
-      user.location.country
-        .toLocaleLowerCase()
-        .includes(country.toLocaleLowerCase())
-    )
+    return filteredCountry !== null && filteredCountry.length > 0
+      ? [...results].filter(user =>
+          user.location.country
+            .toLocaleLowerCase()
+            .includes(filteredCountry.toLocaleLowerCase())
+        )
+      : results
+  }, [results, filteredCountry])
 
-    setResults(newResults)
-  }
-
-  const newResults = isOrdered
-    ? [...results].sort((a, b) =>
-        a.location.country.localeCompare(b.location.country)
-      )
-    : results
+  const sortedResults = useMemo(() => {
+    return isOrdered
+      ? [...results].sort((a, b) =>
+          a.location.country.localeCompare(b.location.country)
+        )
+      : filteredUsers
+  }, [filteredUsers])
 
   return (
     <>
@@ -71,14 +75,14 @@ function App() {
           type='text'
           placeholder='Filtra por país'
           onChange={e => {
-            toggleFilter(e.target.value)
+            setFilterCountry(e.target.value)
           }}
         />
       </header>
       <main>
-        {newResults.length !== 0 && (
+        {sortedResults.length !== 0 && (
           <UserList
-            users={newResults}
+            users={sortedResults}
             isColored={colors}
             toggleDelete={toggleDelete}
           />
