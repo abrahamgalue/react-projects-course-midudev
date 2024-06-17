@@ -13,6 +13,10 @@ header {
   margin-bottom: 45px;
 }
 
+.pointer:hover {
+  cursor: pointer;
+}
+
 .table--showColors tr:nth-child(odd) {
   background-color: #333;
 }

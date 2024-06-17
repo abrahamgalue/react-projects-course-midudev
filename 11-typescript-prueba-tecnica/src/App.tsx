@@ -1,36 +1,15 @@
 import './App.css'
 import { useState, useEffect, useRef, useMemo } from 'react'
-import { type UUID, type User } from './types'
+import { SortBy, type UUID, type User } from './types.d'
 import UserList from './components/UserList'
 
 function App() {
   const [results, setResults] = useState<User[]>([])
-  const [colors, setColors] = useState(false)
-  const [isOrdered, setIsOrdered] = useState(false)
+  const [showColors, setShowColors] = useState(false)
+  const [sorting, setSorting] = useState<SortBy>(SortBy.NONE)
   const [filteredCountry, setFilterCountry] = useState<string | null>(null)
+
   const initialState = useRef<User[]>([])
-
-  const toggleColors = () => {
-    console.log('colores')
-    setColors(!colors)
-  }
-
-  const toggleSortByCountry = () => {
-    console.log('ordenar por país')
-    setIsOrdered(!isOrdered)
-  }
-
-  const handleReset = () => {
-    console.log('resetear estado')
-    setResults(initialState.current)
-  }
-
-  const toggleDelete = (id: UUID) => {
-    console.log('borrar usuario')
-    const newResults = [...results].filter(user => user.login.uuid !== id)
-
-    setResults(newResults)
-  }
 
   useEffect(() => {
     fetch('https://randomuser.me/api/?results=100')
@@ -44,9 +23,31 @@ function App() {
       })
   }, [])
 
-  const filteredUsers = useMemo(() => {
-    console.log('filtrar por input')
+  const toggleColors = () => {
+    setShowColors(!showColors)
+  }
 
+  const toggleSortByCountry = () => {
+    const newSortingValue =
+      sorting === SortBy.NONE ? SortBy.COUNTRY : SortBy.NONE
+    setSorting(newSortingValue)
+  }
+
+  const handleReset = () => {
+    setResults(initialState.current)
+  }
+
+  const handleDelete = (id: UUID) => {
+    const newResults = [...results].filter(user => user.login.uuid !== id)
+
+    setResults(newResults)
+  }
+
+  const handleChangeSort = (sort: SortBy) => {
+    setSorting(sort)
+  }
+
+  const filteredResults = useMemo(() => {
     return filteredCountry !== null && filteredCountry.length > 0
       ? [...results].filter(user =>
           user.location.country
@@ -57,12 +58,19 @@ function App() {
   }, [results, filteredCountry])
 
   const sortedResults = useMemo(() => {
-    return isOrdered
-      ? [...results].sort((a, b) =>
-          a.location.country.localeCompare(b.location.country)
-        )
-      : filteredUsers
-  }, [filteredUsers])
+    if (sorting === SortBy.NONE) return filteredResults
+
+    const compareProperties: Record<string, (user: User) => any> = {
+      [SortBy.COUNTRY]: user => user.location.country,
+      [SortBy.NAME]: user => user.name.first,
+      [SortBy.LAST]: user => user.name.last
+    }
+
+    return filteredResults.toSorted((a, b) => {
+      const extractProperty = compareProperties[sorting]
+      return extractProperty(a).localeCompare(extractProperty(b))
+    })
+  }, [filteredResults, sorting])
 
   return (
     <>
@@ -80,13 +88,12 @@ function App() {
         />
       </header>
       <main>
-        {sortedResults.length !== 0 && (
-          <UserList
-            users={sortedResults}
-            isColored={colors}
-            toggleDelete={toggleDelete}
-          />
-        )}
+        <UserList
+          users={sortedResults}
+          isColored={showColors}
+          deleteUser={handleDelete}
+          changeSorting={handleChangeSort}
+        />
       </main>
     </>
   )
