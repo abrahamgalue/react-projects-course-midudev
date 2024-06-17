@@ -9,6 +9,24 @@ function App() {
   const [isOrdered, setIsOrdered] = useState(false)
   const initialState = useRef<User[]>([])
 
+  const toggleColors = () => {
+    setColors(!colors)
+  }
+
+  const toggleSortByCountry = () => {
+    setIsOrdered(!isOrdered)
+  }
+
+  const handleReset = () => {
+    setResults(initialState.current)
+  }
+
+  const toggleDelete = (id: UUID) => {
+    const newResults = [...results].filter(user => user.login.uuid !== id)
+
+    setResults(newResults)
+  }
+
   useEffect(() => {
     fetch('https://randomuser.me/api/?results=100')
       .then(async res => await res.json())
@@ -21,8 +39,17 @@ function App() {
       })
   }, [])
 
-  const toggleDelete = (id: UUID) => {
-    const newResults = [...results].filter(user => user.login.uuid !== id)
+  const toggleFilter = (country: string) => {
+    if (country === '') {
+      setResults(initialState.current)
+      return
+    }
+
+    const newResults = [...results].filter(user =>
+      user.location.country
+        .toLocaleLowerCase()
+        .includes(country.toLocaleLowerCase())
+    )
 
     setResults(newResults)
   }
@@ -37,27 +64,16 @@ function App() {
     <>
       <h1>Prueba técnica</h1>
       <header>
-        <button
-          onClick={() => {
-            setColors(!colors)
+        <button onClick={toggleColors}>Colorear filas</button>
+        <button onClick={toggleSortByCountry}>Ordenar por país</button>
+        <button onClick={handleReset}>Resetear estado</button>
+        <input
+          type='text'
+          placeholder='Filtra por país'
+          onChange={e => {
+            toggleFilter(e.target.value)
           }}
-        >
-          Colorear filas
-        </button>
-        <button
-          onClick={() => {
-            setIsOrdered(!isOrdered)
-          }}
-        >
-          Ordenar por país
-        </button>
-        <button
-          onClick={() => {
-            setResults(initialState.current)
-          }}
-        >
-          Resetear estado
-        </button>
+        />
       </header>
       <main>
         {newResults.length !== 0 && (
