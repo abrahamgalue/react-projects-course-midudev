@@ -60,11 +60,13 @@ function App() {
         </button>
       </header>
       <main>
-        <UserList
-          isColored={colors}
-          users={newResults}
-          toggleDelete={toggleDelete}
-        />
+        {newResults.length !== 0 && (
+          <UserList
+            users={newResults}
+            isColored={colors}
+            toggleDelete={toggleDelete}
+          />
+        )}
       </main>
     </>
   )
