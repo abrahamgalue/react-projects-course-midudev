@@ -8,6 +8,7 @@ function App() {
   const [showColors, setShowColors] = useState(false)
   const [sorting, setSorting] = useState<SortBy>(SortBy.NONE)
   const [filteredCountry, setFilterCountry] = useState<string | null>(null)
+  const [currentPage, setCurrentPage] = useState(1)
 
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
@@ -18,14 +19,19 @@ function App() {
     setLoading(true)
     setError(false)
 
-    fetch('https://randomuser.me/api/?results=10')
+    fetch(
+      `https://randomuser.me/api/?page=${currentPage}&results=10&seed=abraham`
+    )
       .then(async res => {
         if (!res.ok) throw new Error('Error en la peticion')
         return await res.json()
       })
       .then(data => {
-        setResults(data.results)
-        initialState.current = data.results
+        setResults(prevResults => {
+          const newResults = prevResults.concat(data.results)
+          initialState.current = newResults
+          return newResults
+        })
       })
       .catch(err => {
         setError(err)
@@ -34,7 +40,7 @@ function App() {
       .finally(() => {
         setLoading(false)
       })
-  }, [])
+  }, [currentPage])
 
   const toggleColors = () => {
     setShowColors(!showColors)
@@ -101,16 +107,29 @@ function App() {
         />
       </header>
       <main>
-        {loading && <strong>Cargando...</strong>}
-        {!loading && error && <p>Ha habido un error</p>}
-        {!loading && !error && results.length === 0 && <p>No hay usuarios</p>}
-        {!loading && !error && results.length > 0 && (
+        {results.length > 0 && (
           <UserList
             users={sortedResults}
             isColored={showColors}
             deleteUser={handleDelete}
             changeSorting={handleChangeSort}
           />
+        )}
+
+        {loading && <strong>Cargando...</strong>}
+
+        {error && <p>Ha habido un error</p>}
+
+        {results.length === 0 && <p>No hay usuarios</p>}
+
+        {!loading && !error && (
+          <button
+            onClick={() => {
+              setCurrentPage(currentPage + 1)
+            }}
+          >
+            Cargar mas resultados
+          </button>
         )}
       </main>
     </>
