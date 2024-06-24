@@ -9,17 +9,30 @@ function App() {
   const [sorting, setSorting] = useState<SortBy>(SortBy.NONE)
   const [filteredCountry, setFilterCountry] = useState<string | null>(null)
 
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
+
   const initialState = useRef<User[]>([])
 
   useEffect(() => {
-    fetch('https://randomuser.me/api/?results=100')
-      .then(async res => await res.json())
+    setLoading(true)
+    setError(false)
+
+    fetch('https://randomuser.me/api/?results=10')
+      .then(async res => {
+        if (!res.ok) throw new Error('Error en la peticion')
+        return await res.json()
+      })
       .then(data => {
         setResults(data.results)
         initialState.current = data.results
       })
       .catch(err => {
+        setError(err)
         console.error('Error:', err)
+      })
+      .finally(() => {
+        setLoading(false)
       })
   }, [])
 
@@ -63,7 +76,7 @@ function App() {
     const compareProperties: Record<string, (user: User) => any> = {
       [SortBy.COUNTRY]: user => user.location.country,
       [SortBy.NAME]: user => user.name.first,
-      [SortBy.LAST]: user => user.name.last
+      [SortBy.LAST]: user => user.name.last,
     }
 
     return filteredResults.toSorted((a, b) => {
@@ -88,12 +101,17 @@ function App() {
         />
       </header>
       <main>
-        <UserList
-          users={sortedResults}
-          isColored={showColors}
-          deleteUser={handleDelete}
-          changeSorting={handleChangeSort}
-        />
+        {loading && <strong>Cargando...</strong>}
+        {!loading && error && <p>Ha habido un error</p>}
+        {!loading && !error && results.length === 0 && <p>No hay usuarios</p>}
+        {!loading && !error && results.length > 0 && (
+          <UserList
+            users={sortedResults}
+            isColored={showColors}
+            deleteUser={handleDelete}
+            changeSorting={handleChangeSort}
+          />
+        )}
       </main>
     </>
   )
