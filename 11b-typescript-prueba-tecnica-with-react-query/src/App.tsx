@@ -3,6 +3,17 @@ import { useState, useEffect, useRef, useMemo } from 'react'
 import { SortBy, type UUID, type User } from './types.d'
 import UserList from './components/UserList'
 
+const fetchUsers = async (page: number) => {
+  return await fetch(
+    `https://randomuser.me/api/?page=${page}&results=10&seed=abraham`
+  )
+    .then(async res => {
+      if (!res.ok) throw new Error('Error en la peticion')
+      return await res.json()
+    })
+    .then(data => data.results)
+}
+
 function App() {
   const [results, setResults] = useState<User[]>([])
   const [showColors, setShowColors] = useState(false)
@@ -19,16 +30,10 @@ function App() {
     setLoading(true)
     setError(false)
 
-    fetch(
-      `https://randomuser.me/api/?page=${currentPage}&results=10&seed=abraham`
-    )
-      .then(async res => {
-        if (!res.ok) throw new Error('Error en la peticion')
-        return await res.json()
-      })
-      .then(data => {
+    fetchUsers(currentPage)
+      .then(users => {
         setResults(prevResults => {
-          const newResults = prevResults.concat(data.results)
+          const newResults = prevResults.concat(users)
           initialState.current = newResults
           return newResults
         })
