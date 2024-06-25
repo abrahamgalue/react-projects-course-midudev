@@ -1,7 +1,8 @@
 import './App.css'
-import { useState, useEffect, useRef, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import { SortBy, type UUID, type User } from './types.d'
 import UserList from './components/UserList'
+import { useQuery } from '@tanstack/react-query'
 
 const fetchUsers = async (page: number) => {
   return await fetch(
@@ -15,37 +16,21 @@ const fetchUsers = async (page: number) => {
 }
 
 function App() {
-  const [results, setResults] = useState<User[]>([])
+  const {
+    isError,
+    isLoading,
+    data: results = [],
+    refetch,
+  } = useQuery<User[]>({
+    queryKey: ['users'],
+    queryFn: async () => await fetchUsers(1),
+  })
+
   const [showColors, setShowColors] = useState(false)
   const [sorting, setSorting] = useState<SortBy>(SortBy.NONE)
   const [filteredCountry, setFilterCountry] = useState<string | null>(null)
+
   const [currentPage, setCurrentPage] = useState(1)
-
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(false)
-
-  const initialState = useRef<User[]>([])
-
-  useEffect(() => {
-    setLoading(true)
-    setError(false)
-
-    fetchUsers(currentPage)
-      .then(users => {
-        setResults(prevResults => {
-          const newResults = prevResults.concat(users)
-          initialState.current = newResults
-          return newResults
-        })
-      })
-      .catch(err => {
-        setError(err)
-        console.error('Error:', err)
-      })
-      .finally(() => {
-        setLoading(false)
-      })
-  }, [currentPage])
 
   const toggleColors = () => {
     setShowColors(!showColors)
@@ -57,14 +42,13 @@ function App() {
     setSorting(newSortingValue)
   }
 
-  const handleReset = () => {
-    setResults(initialState.current)
+  const handleReset = async () => {
+    await refetch()
   }
 
   const handleDelete = (id: UUID) => {
-    const newResults = [...results].filter(user => user.login.uuid !== id)
-
-    setResults(newResults)
+    // const newResults = [...results].filter(user => user.login.uuid !== id)
+    // setResults(newResults)
   }
 
   const handleChangeSort = (sort: SortBy) => {
@@ -121,13 +105,13 @@ function App() {
           />
         )}
 
-        {loading && <strong>Cargando...</strong>}
+        {isLoading && <strong>Cargando...</strong>}
 
-        {error && <p>Ha habido un error</p>}
+        {isError && <p>Ha habido un error</p>}
 
-        {results.length === 0 && <p>No hay usuarios</p>}
+        {!isLoading && results.length === 0 && <p>No hay usuarios</p>}
 
-        {!loading && !error && (
+        {!isLoading && !isError && (
           <button
             onClick={() => {
               setCurrentPage(currentPage + 1)
