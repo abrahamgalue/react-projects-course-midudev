@@ -1,30 +1,23 @@
-# React + TypeScript + Vite
+<div align='center'>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 📮 React + React Query: Sistema de Comentarios
 
-Currently, two official plugins are available:
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Sistema de comentarios hecho con React Query
 
-## Expanding the ESLint configuration
+> 🧩 Aquí puedes ver su [**Live Demo**](https://comments-react-query-abrahamgalue.netlify.app/).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![vista-previa](./public/preview/01-page-preview.png)
 
-- Configure the top-level `parserOptions` property like this:
+## 🚀 Descripción
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Este proyecto es un sistema de comentarios hecho con React Query.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Realiza actualizaciones optimistas de la UI cuando el usuario envia un comentario y se conecta a una base de datos JSON en la nube que proporciona una API REST.
+
+## 🎭 Tecnologías
+
+- [**React/TanStack Query**](https://tanstack.com/query/latest) para **manejar el estado asíncrono** de la aplicación.
+- [**JSONBIN**](https://jsonbin.io/) la **API REST** que se encuentra en la nube.
+- [**Tailwind CSS**](https://tailwindcss.com/) para la apariencia de la UI.

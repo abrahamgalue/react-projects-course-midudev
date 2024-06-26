@@ -29,8 +29,7 @@ export const getComments = async () => {
   return json?.record
 }
 
-const delay = async (ms: number) =>
-  await new Promise(resolve => setTimeout(resolve, ms))
+// const delay = async (ms: number) => await new Promise(resolve => setTimeout(resolve, ms))
 
 export const postComment = async (comment: Comment) => {
   const comments = await getComments()
