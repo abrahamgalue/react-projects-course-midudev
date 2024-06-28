@@ -12,6 +12,8 @@ import { useQuestionsStore } from './store/questions'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { gradientDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import { type Question as QuestionType } from './types'
+import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material'
+import Footer from './Footer'
 
 // esta funcion solo se crea una vez
 const getBackgroundColor = (info: QuestionType, index: number) => {
@@ -49,7 +51,9 @@ const Question = ({ info }: { info: QuestionType }) => {
         maxWidth: '100%',
       }}
     >
-      <Typography variant='h5'>{info.question}</Typography>
+      <Typography variant='h5' sx={{ userSelect: 'none' }}>
+        {info.question}
+      </Typography>
 
       <SyntaxHighlighter language='javascript' style={gradientDark}>
         {info.code}
@@ -77,12 +81,32 @@ const Question = ({ info }: { info: QuestionType }) => {
 const Game = () => {
   const questions = useQuestionsStore(state => state.questions)
   const currentQuestion = useQuestionsStore(state => state.currentQuestion)
+  const goNextQuestion = useQuestionsStore(state => state.goNextQuestion)
+  const goPreviousQuestion = useQuestionsStore(
+    state => state.goPreviousQuestion
+  )
 
   const questionInfo = questions[currentQuestion]
 
   return (
     <>
+      <Stack direction='row' alignItems='center' justifyContent='center'>
+        <IconButton
+          onClick={goPreviousQuestion}
+          disabled={currentQuestion === 0}
+        >
+          <ArrowBackIosNew />
+        </IconButton>
+        {currentQuestion + 1} / {questions.length}
+        <IconButton
+          onClick={goNextQuestion}
+          disabled={currentQuestion >= questions.length - 1}
+        >
+          <ArrowForwardIos />
+        </IconButton>
+      </Stack>
       <Question info={questionInfo} />
+      <Footer />
     </>
   )
 }
