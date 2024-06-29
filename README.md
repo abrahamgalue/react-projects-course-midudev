@@ -27,6 +27,7 @@ Aquí puedes ver los vídeos con las clases:
 - 10: [React Redux Toolkit + ESlint](https://www.youtube.com/watch?v=bEEjuwujbbU)
 - 11: [Prueba técnica de React con TypeScript](https://www.youtube.com/watch?v=mNJOWXc83Y4)
 - 12: [React Query + Paginación + Infinite Scroll](https://www.youtube.com/watch?v=WKfVjQUa6nE)
+- 13: [JavaScript Quiz con Zustand + TypeScript desde cero](https://www.youtube.com/watch?v=p2wF2wRjcN0)
 
 <div align='center'>
 
@@ -47,5 +48,6 @@ Aquí puedes ver los vídeos con las clases:
 | `11`   | Prueba Técnica con TypeScript y React                       | [Ver](11-typescript-prueba-tecnica/)                   | [Visitar](https://prueba-tecnica-ts-abrahamgalue.netlify.app/)      |
 | `11b`  | Prueba Técnica con TypeScript y React con React Query       | [Ver](11b-typescript-prueba-tecnica-with-react-query/) | [Visitar](https://prueba-tecnica-ts-abrahamgalue.netlify.app/)      |
 | `12`   | Sistema de comentarios con React Query                      | [Ver](12-comments-react-query/)                        | [Visitar](https://comments-react-query-abrahamgalue.netlify.app/)   |
+| `13`   |  JavaScript Quiz con Zustand y TypeScript                   | [Ver](13-javascript-quiz-con-zustand/)                 | [Visitar](https://js-quiz-abrahamgalue.netlify.app/)                |
 
 </div>
