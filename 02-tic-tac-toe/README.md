@@ -8,7 +8,7 @@
 
 > 🧩 Aquí puedes ver su [**Live Demo.**](https://tic-tac-toe-abraham.netlify.app/)
 
-![vista-previa](./public/preview/01-page-preview.jpg)
+![vista-previa](public/preview/01-page-preview.jpg)
 
 ## 🚀 Descripción
 
