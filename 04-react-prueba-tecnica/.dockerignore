@@ -4,3 +4,10 @@ dist
 .DS_Store
 .git
 .vscode
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+Dockerfile
+docker-compose.yml
+nginx.conf
