@@ -35,7 +35,7 @@ export function CartProvider({ children }) {
   const { state, addToCart, removeFromCart, clearCart } = useCartReducer()
 
   return (
-    <CartContext.Provider
+    <CartContext
       value={{
         cart: state,
         addToCart,
@@ -44,6 +44,6 @@ export function CartProvider({ children }) {
       }}
     >
       {children}
-    </CartContext.Provider>
+    </CartContext>
   )
 }

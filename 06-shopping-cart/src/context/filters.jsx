@@ -15,20 +15,19 @@ export function FiltersProvider({ children }) {
   })
 
   return (
-    <FiltersContext.Provider
+    <FiltersContext
       value={{
         filters,
         setFilters,
       }}
     >
       {children}
-    </FiltersContext.Provider>
+    </FiltersContext>
   )
 }
 
-
 // FILTRAR ES MUY TÍPICO Y ES DE JUNIORS Y TRAINE
-  // const [filters, setFilters] = useState({
-  //   category: 'all',
-  //   minPrice: 0,
-  // })
+// const [filters, setFilters] = useState({
+//   category: 'all',
+//   minPrice: 0,
+// })
