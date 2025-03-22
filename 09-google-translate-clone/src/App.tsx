@@ -35,7 +35,7 @@ function App() {
         if (result == null) return
         setResult(result)
       })
-      .catch(() => setResult('Error'))
+      .catch(() => setResult('Parece que hubo un problema...'))
   }, [debouncedFromText, fromLanguage, toLanguage])
 
   const handleClipboard = () => {
