@@ -10,6 +10,8 @@ import { LanguageSelector } from './components/LanguageSelector'
 import { SectionType } from './types.d'
 import { TextArea } from './components/TextArea'
 import { translate } from './services/translate'
+import { notify } from './utils/toastify'
+import { Toast } from './components/Toastify'
 
 function App() {
   const {
@@ -40,6 +42,7 @@ function App() {
 
   const handleClipboard = () => {
     navigator.clipboard.writeText(result).then(() => {})
+    notify()
   }
 
   const handleSpeak = () => {
@@ -104,6 +107,7 @@ function App() {
                 >
                   <Button variant='link' onClick={handleClipboard}>
                     <ClipboardIcon />
+                    <Toast />
                   </Button>
                   <Button variant='link' onClick={handleSpeak}>
                     <SpeakerIcon />
