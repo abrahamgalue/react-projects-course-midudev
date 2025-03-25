@@ -1,19 +1,23 @@
+import type { ChangeEvent, FC } from 'react'
+
 import { Form } from 'react-bootstrap'
+
+import type { FromLanguage, Language } from '../types.d'
+
 import { AUTO_LANGUAGE, SUPPORTED_LANGUAGES } from '../constants'
-import { FC, ChangeEvent } from 'react'
-import { type FromLanguage, type Language, SectionType } from '../types.d'
+import { SectionType } from '../types.d'
 
 type Props =
   | {
-      type: SectionType.From
-      value: FromLanguage
-      onChange: (language: FromLanguage) => void
-    }
+    type: SectionType.From
+    value: FromLanguage
+    onChange: (language: FromLanguage) => void
+  }
   | {
-      type: SectionType.To
-      value: Language
-      onChange: (language: Language) => void
-    }
+    type: SectionType.To
+    value: Language
+    onChange: (language: Language) => void
+  }
 
 export const LanguageSelector: FC<Props> = ({ onChange, type, value }) => {
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -22,7 +26,7 @@ export const LanguageSelector: FC<Props> = ({ onChange, type, value }) => {
 
   return (
     <Form.Select
-      aria-label='Selecciona el idioma'
+      aria-label="Selecciona el idioma"
       value={value}
       onChange={handleChange}
     >

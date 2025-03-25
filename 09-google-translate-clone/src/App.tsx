@@ -1,17 +1,20 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
+
 import './App.css'
-import { useStore } from './hooks/useStore'
-import { useDebounce } from './hooks/useDebounce'
+
 import { useEffect } from 'react'
-import { Container, Row, Col, Button, Stack } from 'react-bootstrap'
-import { AUTO_LANGUAGE, VOICE_FOR_LANGUAGE } from './constants'
+import { Button, Col, Container, Row, Stack } from 'react-bootstrap'
+
 import { ArrowsIcon, ClipboardIcon, SpeakerIcon } from './components/Icons'
 import { LanguageSelector } from './components/LanguageSelector'
-import { SectionType } from './types.d'
 import { TextArea } from './components/TextArea'
-import { translate } from './services/translate'
-import { notify } from './utils/toastify'
 import { Toast } from './components/Toastify'
+import { AUTO_LANGUAGE, VOICE_FOR_LANGUAGE } from './constants'
+import { useDebounce } from './hooks/useDebounce'
+import { useStore } from './hooks/useStore'
+import { translate } from './services/translate'
+import { SectionType } from './types.d'
+import { notify } from './utils/toastify'
 
 function App() {
   const {
@@ -30,11 +33,13 @@ function App() {
   const debouncedFromText = useDebounce(fromText, 650)
 
   useEffect(() => {
-    if (debouncedFromText === '') return
+    if (debouncedFromText === '')
+      return
 
     translate({ fromLanguage, toLanguage, text: debouncedFromText })
-      .then(result => {
-        if (result == null) return
+      .then((result) => {
+        if (result == null)
+          return
         setResult(result)
       })
       .catch(() => setResult('Parece que hubo un problema...'))
@@ -72,9 +77,9 @@ function App() {
           </Stack>
         </Col>
 
-        <Col xs='auto'>
+        <Col xs="auto">
           <Button
-            variant='link'
+            variant="link"
             disabled={fromLanguage === AUTO_LANGUAGE}
             onClick={interchangeLanguages}
           >
@@ -105,11 +110,11 @@ function App() {
                     display: 'flex',
                   }}
                 >
-                  <Button variant='link' onClick={handleClipboard}>
+                  <Button variant="link" onClick={handleClipboard}>
                     <ClipboardIcon />
                     <Toast />
                   </Button>
-                  <Button variant='link' onClick={handleSpeak}>
+                  <Button variant="link" onClick={handleSpeak}>
                     <SpeakerIcon />
                   </Button>
                 </div>

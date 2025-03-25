@@ -1,7 +1,8 @@
 import { toast } from 'react-toastify'
+
 import { GoogleLike } from '../components/Toastify'
 
-export const notify = () => {
+export function notify() {
   toast(GoogleLike, {
     style: {
       backgroundColor: '#323232',

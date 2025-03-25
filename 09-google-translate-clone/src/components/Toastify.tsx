@@ -1,6 +1,6 @@
 import { ToastContainer } from 'react-toastify'
 
-export const GoogleLike = () => {
+export function GoogleLike() {
   return (
     <div>
       <p style={{ marginBottom: 0 }}>Se copió la traducción</p>
@@ -8,6 +8,6 @@ export const GoogleLike = () => {
   )
 }
 
-export const Toast = () => {
+export function Toast() {
   return <ToastContainer limit={1} />
 }

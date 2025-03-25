@@ -1,5 +1,7 @@
 import { useReducer } from 'react'
-import { Action, FromLanguage, Language, State } from '../types'
+
+import type { Action, FromLanguage, Language, State } from '../types'
+
 import { AUTO_LANGUAGE } from '../constants'
 
 const initialState: State = {
@@ -17,7 +19,8 @@ function reducer(state: State, action: Action) {
     case 'INTERCHANGE_LANGUAGES': {
       // lógica del estado dentro del componente
       // lo evitamos en los componentes
-      if (state.fromLanguage === AUTO_LANGUAGE) return state
+      if (state.fromLanguage === AUTO_LANGUAGE)
+        return state
 
       const loading = state.fromText !== ''
 
@@ -30,7 +33,8 @@ function reducer(state: State, action: Action) {
       }
     }
     case 'SET_FROM_LANGUAGE': {
-      if (state.fromLanguage === action.payload) return state
+      if (state.fromLanguage === action.payload)
+        return state
 
       const loading = state.fromText !== ''
 
@@ -42,7 +46,8 @@ function reducer(state: State, action: Action) {
       }
     }
     case 'SET_TO_LANGUAGE': {
-      if (state.toLanguage === action.payload) return state
+      if (state.toLanguage === action.payload)
+        return state
 
       const loading = state.fromText !== ''
 
@@ -76,8 +81,8 @@ function reducer(state: State, action: Action) {
 }
 
 export function useStore() {
-  const [{ fromLanguage, toLanguage, fromText, result, loading }, dispatch] =
-    useReducer(reducer, initialState)
+  const [{ fromLanguage, toLanguage, fromText, result, loading }, dispatch]
+    = useReducer(reducer, initialState)
 
   const interchangeLanguages = () => dispatch({ type: 'INTERCHANGE_LANGUAGES' })
 

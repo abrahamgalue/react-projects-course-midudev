@@ -1,8 +1,10 @@
+import type { ChangeEvent, CSSProperties, FC } from 'react'
+
 import { Form } from 'react-bootstrap'
-import { CSSProperties, ChangeEvent, FC } from 'react'
+
 import { SectionType } from '../types.d'
 
-interface Props {
+type Props = {
   type: SectionType
   loading?: boolean
   value: string
@@ -16,15 +18,17 @@ const commonStyles: CSSProperties = {
   resize: 'none',
 }
 
-const getPlaceholder = ({
+function getPlaceholder({
   type,
   loading,
 }: {
   type: SectionType
   loading?: boolean
-}) => {
-  if (type === SectionType.From) return 'Introducir texto'
-  if (loading === true) return 'Cargando...'
+}) {
+  if (type === SectionType.From)
+    return 'Introducir texto'
+  if (loading === true)
+    return 'Cargando...'
   return 'Traducción'
 }
 
@@ -36,7 +40,7 @@ export const TextArea: FC<Props> = ({ loading, value, onChange, type }) => {
   return (
     <Form.Control
       autoFocus={type === SectionType.From}
-      as='textarea'
+      as="textarea"
       disabled={type === SectionType.To}
       placeholder={getPlaceholder({ type, loading })}
       style={commonStyles}
