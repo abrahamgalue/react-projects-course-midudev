@@ -9,15 +9,15 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@playwright/test": "^1.51.0",
-    "standard": "^17.1.2",
-    "vite": "^6.2.1"
+    "@playwright/test": "1.52.0",
+    "standard": "17.1.2",
+    "vite": "6.3.3"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "styled-components": "^6.1.15"
+    "@vitejs/plugin-react": "4.4.1",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "styled-components": "6.1.17"
   },
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json"
