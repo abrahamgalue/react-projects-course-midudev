@@ -1,13 +1,7 @@
 services:
   frontend:
-    build:
-      context: .
-      target: ${TARGET}
+    build: .
     ports:
-      - "5173:5173"
-      - "80:80"
-    volumes:
-      - .:/app
-      - /app/node_modules
+      - '3000:3000'
     environment:
-      - NODE_ENV=${NODE_ENV}
+      - NODE_ENV=production
