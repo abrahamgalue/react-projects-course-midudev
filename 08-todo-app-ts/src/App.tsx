@@ -11,14 +11,14 @@ import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Copyright } from './components/Copyright'
 
-const App = (): JSX.Element => {
+const App = () => {
   const [todos, setTodos] = useState([] as TodoType[])
   const [filterSelected, setFilterSelected] = useState<FilterValue>(
     TODO_FILTERS.ALL
   )
 
   const handleRemove = ({ id }: TodoId): void => {
-    const newTodos = todos.filter(todo => todo.id !== id)
+    const newTodos = todos.filter((todo) => todo.id !== id)
     setTodos(newTodos)
   }
 
@@ -52,7 +52,7 @@ const App = (): JSX.Element => {
   const activeCount = todos.filter((todo: TodoType) => !todo.completed).length
   const completedCount = todos.length - activeCount
 
-  const filteredTodos = todos.filter(todo => {
+  const filteredTodos = todos.filter((todo) => {
     if (filterSelected === TODO_FILTERS.ACTIVE) return !todo.completed
     if (filterSelected === TODO_FILTERS.COMPLETED) return todo.completed
     return todo
@@ -70,7 +70,7 @@ const App = (): JSX.Element => {
   }
 
   return (
-    <div className='todoapp'>
+    <div className="todoapp">
       <Header onAddTodo={handleAddTodo} />
       <Todos
         onToggleCompleteTodo={handleCompleted}

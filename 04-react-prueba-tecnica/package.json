@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "4.4.1",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "styled-components": "6.1.17"
   },
   "eslintConfig": {

@@ -28,6 +28,5 @@ Te permite:
 
 ## 🎭 Tecnologías
 
-- [**google/generative-ai**](https://www.npmjs.com/package/@google/generative-ai) Google AI SDK utilizando un **modelo generativo** para las traducciones.
 - [**React-Bootstrap**](https://react-bootstrap.netlify.app/) para los componentes reutilizables de **UI**.
 - [**React Testing Library**](https://testing-library.com/docs/react-testing-library/intro), [**happy-dom**](https://www.npmjs.com/package/happy-dom) y [**Vitest**](https://vitest.dev/) para realizar **test unitarios**.
