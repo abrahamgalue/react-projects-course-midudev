@@ -2,6 +2,11 @@ import { type Middleware, configureStore } from '@reduxjs/toolkit'
 import userReducer, { rollbackUser } from '../features/users/userSlice'
 import { toast } from 'sonner'
 
+interface ActionWithPayload<Type = string, Payload = unknown> {
+  type: Type
+  payload?: Payload
+}
+
 export const persistanceLocalStorageMiddleWare: Middleware =
   store => next => action => {
     next(action)
@@ -9,7 +14,7 @@ export const persistanceLocalStorageMiddleWare: Middleware =
   }
 
 const syncWithDatabaseMiddleware: Middleware = store => next => action => {
-  const { type, payload } = action
+  const { type, payload } = action as ActionWithPayload
   const previousState = store.getState() as RootState
   next(action)
 
