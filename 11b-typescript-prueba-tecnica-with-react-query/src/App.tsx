@@ -27,7 +27,7 @@ function App() {
     void refetch()
   }
 
-  const handleDelete = (email: string) => {
+  const handleDelete = (_email: string) => {
     // const filteredUsers = users.filter((user) => user.email !== email)
     // setUsers(filteredUsers)
   }
